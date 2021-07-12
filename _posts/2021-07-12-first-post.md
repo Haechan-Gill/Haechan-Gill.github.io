@@ -5,11 +5,9 @@ categories: GWAS PLINK GEMMA DecisionTree
 ---
 
 
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+이 포스팅에서는 Genome-wide Association Study(GWAS)가 무엇인지 간단하게 공부하고 Plink, Gemma, Decision tree를 활용해 애기장대(*Arabidopsis thaliana*)의 ovule number에 대한 association test tutorial을 진행해보겠습니다.
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
 
-Jekyll also offers powerful support for code snippets:
 
 ```python
 def print_hi(name):
