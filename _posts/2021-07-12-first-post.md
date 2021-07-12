@@ -1,7 +1,7 @@
 ---
-title: "Welcome to Jekyll!"
+title: "Genome-wide Association Study(GWAS) tutorial"
 date: 2021-07-12 16:10:00 -0400
-categories: jekyll update
+categories: GWAS PLINK GEMMA DecisionTree
 ---
 
 
