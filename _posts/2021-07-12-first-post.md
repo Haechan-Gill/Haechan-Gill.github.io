@@ -13,6 +13,7 @@ categories: GWAS PLINK GEMMA DecisionTree
 ![manhattanplot](../img/Ovulenumber_Salkex_MH.png)
 
 
+
 ```python
 def print_hi(name):
   print("hello", name)
