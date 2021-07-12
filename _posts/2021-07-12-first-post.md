@@ -10,7 +10,7 @@ categories: GWAS PLINK GEMMA DecisionTree
 
 
 
-![manhattanplot](./img/Ovulenumber_Salkex_MH.png)
+![manhattanplot](../img/Ovulenumber_Salkex_MH.png)
 
 
 ```python
