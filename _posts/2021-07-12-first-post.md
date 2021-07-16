@@ -2,7 +2,6 @@
 title: "Genome-wide Association Study(GWAS) tutorial"
 date: 2021-07-12 16:10:00 -0400
 categories: GWAS PLINK GEMMA DecisionTree
-use_math: true
 ---
   
   
