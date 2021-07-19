@@ -30,7 +30,7 @@ Mathematical Background
   
   
   
-![manhattanplot](https://github.com/Haechan-Gill/Haechan-Gill.github.io/blob/main/img/Ovulenumber_Salkex_MH.png)
+![manhattanplot](main/img/Ovulenumber_Salkex_MH.png)
   
   
   
