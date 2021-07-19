@@ -30,7 +30,7 @@ Mathematical Background
   
   
   
-![manhattanplot](main/img/Ovulenumber_Salkex_MH.png)
+![manhattanplot](/img/Ovulenumber_Salkex_MH.png)
   
   
   
