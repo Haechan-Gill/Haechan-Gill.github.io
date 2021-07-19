@@ -26,14 +26,14 @@ GWAS는 특정 형질에 관여하는 QTL을 찾는 연구를 뜻하며 오늘 �
 Mathematical Background
 -------------------------------
   
-
-
-
-
+  
+  
+  
+  
 ![manhattanplot](https://github.com/Haechan-Gill/Haechan-Gill.github.io/blob/main/img/Ovulenumber_Salkex_MH.png?raw=true)
-
-
-
+  
+  
+  
 ```python
 def print_hi(name):
   print("hello", name)
