@@ -132,28 +132,23 @@ qqPlot(df$P, main = 'QQ plot')
 ![qqplot](/img/qqplot.png)
   
   
-qqman library의 manhattan 함수와 GWASTools의 qqPlot 함수의 자세한 설명은 아래의 메뉴얼을 참고하시기 바랍니다.
+qqman library의 manhattan 함수와 GWASTools의 qqPlot 함수의 자세한 설명은 아래의 메뉴얼을 참고하시기 바랍니다.  
 [qqman manhattan](https://cran.r-project.org/web/packages/qqman/vignettes/qqman.html)
 [GWASTools qqplot](https://rdrr.io/bioc/GWASTools/man/qqPlot.html)
   
   
 ### 5. 결과 분석
- 
- toy data의 결과에서는 17번 염색체에서 굉장히 높은 peak가 관찰됩니다. 17번 염색체를 아래의 코드를 이용해 확대하여 관찰해 보겠습니다.  
-```r
-manhattan(subset(df, CHR == 17), main = "CHR 17", ylim = c(0, 10), cex = 0.6, cex.axis = 0.9, col = c("grey", "skyblue"),
-          genomewideline = F,suggestiveline=F)
-```
-
-Future study
+일반적으로 GWAS 굉장히 많은 수의 SNP을 테스트하기 때문에 false positive에 취약합니다. 따라서 Bonferroni correction이나 False discovery rate correction과 같은 multiple hypothesis correcion을 해주어야 합니다. 그리고 correction 거친 후에도 유의미하다고 해서 그 SNP이 항상 형질과 생물학적인 연관성이 있다고 단정지어선 안됩니다. GWAS는 association이 있으리라 예상되는 QTL 후보를 선별하는 과정으로 이해해야 하며 실제로 형질에 영향을 줄 것인지에 대한 validation이 필수적입니다.  
+validation은 기본적으로 association이 있는 SNP 근처에 분포하고 있는 유전자를 리스트업하는 것에서 시작합니다. 만약 리스트업한 유전자들의 기능이 이미 잘 밝혀져 있다면 그 기능들을 살펴서 테스트한 형질에 영향을 주는 메커니즘이나 인과관계를 설명하는 것이 일반적입니다. 만약 기능이 잘 밝혀져 있지 않은 유전자이거나 모델 생물을 이용해 GWAS를 했다면 후보 유전자를 knock out 혹은 knock down시켜 테스트한 형질이 영향을 받는지 추가 실험을 통해 validation을 해야 합니다.  
+  
+  
+Summary and Future study
 ------------------------------------
+이번 포스팅에서는 GWAS와 linear mixed model에 대해 알아보았고 GEMMA와 toy data를 이용해 직접 association test를 해보았습니다. 그리고 그 결과물이 의미하는 바를 이해하고 R에서 manhattan plot과 qq plot으로 나타내었습니다.  
+이번 실습에서는 하나의 형질에 대한 linear mixed model을 사용 하였는데 이를 Univariate linear mixed model이라고 합니다. 두 종류 이상의 형질 데이터를 한꺼번에 association test할 수도 있습니다. 이를 Multivariate linear mixed model이라고 하며 이는 GEMMA에서 지원하는 기능입니다. 향후에는 Multivariate linear mixed model을 공부해 이를 어떤 생명과학 데이터에 적용할 수 있을지 공부해볼 필요가 있겠습니다.  
+그리고 서로 다른 두 종을 이용해 GWAS를 할 수도 있습니다. 예를들어 여러 pathogen과 host 조합에서 병이 심한 정도를 측정한 다음에 association test를 할 수 있습니다. 이러한 연구는 식물과 식물의 병원체 박테리아에서 진행된 바 있고 사람과 사람의 microbiome 사이에서 응용될 수 있습니다. 이를 two-way mixed effects method라 하며 하나의 종에서는 유의미하지 않았던 유전자가 two-way mixed effects method를 통해 검출되기도 합니다. 보다 자세한 내용은 아래의 논문을 참고하시기 바랍니다.  
+[two-way GWAS](https://www.pnas.org/content/115/24/E5440.short)
 
 
-
   
   
-  
-  
-  
-  
-
