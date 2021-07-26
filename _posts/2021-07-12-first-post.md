@@ -147,7 +147,7 @@ Summary and Future study
 이번 포스팅에서는 GWAS와 linear mixed model에 대해 알아보았고 GEMMA와 toy data를 이용해 직접 association test를 해보았습니다. 그리고 그 결과물이 의미하는 바를 이해하고 R에서 manhattan plot과 qq plot으로 나타내었습니다.  
 이번 실습에서는 하나의 형질에 대한 linear mixed model을 사용 하였는데 이를 Univariate linear mixed model이라고 합니다. 두 종류 이상의 형질 데이터를 한꺼번에 association test할 수도 있습니다. 이를 Multivariate linear mixed model이라고 하며 이는 GEMMA에서 지원하는 기능입니다. 향후에는 Multivariate linear mixed model을 공부해 이를 어떤 생명과학 데이터에 적용할 수 있을지 공부해볼 필요가 있겠습니다.  
 그리고 서로 다른 두 종을 이용해 GWAS를 할 수도 있습니다. 예를들어 여러 pathogen과 host 조합에서 병이 심한 정도를 측정한 다음에 association test를 할 수 있습니다. 이러한 연구는 식물과 식물의 병원체 박테리아에서 진행된 바 있고 사람과 사람의 microbiome 사이에서 응용될 수 있습니다. 이를 two-way mixed effects method라 하며 하나의 종에서는 유의미하지 않았던 유전자가 two-way mixed effects method를 통해 검출되기도 합니다. 보다 자세한 내용은 아래의 논문을 참고하시기 바랍니다.  
-[two-way GWAS](https://www.pnas.org/content/115/24/E5440.short)
+[two-way mixed effects method](https://www.pnas.org/content/115/24/E5440.short)
 
 
   
