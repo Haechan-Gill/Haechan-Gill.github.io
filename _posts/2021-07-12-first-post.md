@@ -133,7 +133,7 @@ qqPlot(df$P, main = 'QQ plot')
   
   
 qqman library의 manhattan 함수와 GWASTools의 qqPlot 함수의 자세한 설명은 아래의 메뉴얼을 참고하시기 바랍니다.  
-[qqman manhattan](https://cran.r-project.org/web/packages/qqman/vignettes/qqman.html)
+[qqman manhattan](https://cran.r-project.org/web/packages/qqman/vignettes/qqman.html)  
 [GWASTools qqplot](https://rdrr.io/bioc/GWASTools/man/qqPlot.html)
   
   
