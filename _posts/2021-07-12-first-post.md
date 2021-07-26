@@ -33,11 +33,19 @@ Mathematical Background
 GEMMA는 linear mixed model을 기반으로 SNP genotype과 형질 데이터 사이의 association을 테스트합니다. 여기서 linear mixed model이란 일반적인 linear model에 랜덤효과(random effect)를 추가시킨 모형입니다. 기본적인 linear model은 아래와 같은 수식으로 표현됩니다.  
   
 $$
-y = x\beta + \epsilon, epsiolon ~ N(0,I\sigma^2)
+y = x\beta + \epsilon, \epsilon ~ N(0,I\sigma^2)
 $$
   
 여기서 $y$를 반응변수, $x$를 설명변수라 하며 반응변수가 설명변수에 대한 선형함수라는 가정이 들어가 있습니다. 설명번수는 실험에서 가설을 검증하기 위해 변화시키는 조작변인으로, 반응변수는 조작변인에 영향을 받아 값이 변하는 종속변인이라 이해할 수 있겠습니다.  
-
+$\x$에 곱해진 $\beta$는 effect size라 하며 간단하게 직선의 기울기라 이해할 수 있습니다. $\beta$의 부호가 양수라면 설명변수가 증가할 때 반응변수 역시 증가할 것이고 음수인 경우에는 둘의 증감이 서로 반대일 것입니다. 그리고 $\beta$의 절대값은 설명변수에 의해 반응변수의 값이 변하는 정도를 의미합니다.  
+$\epsilon$은 오차항에 해당하며 평균이 0인 어떤 정규분포를 따른다고 가정합니다.  
+linear model에서 목표로 하는 것은 주어진 반응변수와 설명변수의 관계를 가장 잘 설명할 수 있는 $\beta$와 $\sigma^2$의 추정량을 찾는 것입니다. 그 방법 중의 하나로 대표적인 것이 최소제곱 추정법이 있습니다. 최소제곱 추정법은 본 포스팅의 핵심이 아니므로 관심 있으신 분들은 다음을 참고해보시길 바랍니다.  
+  
+그렇다면 linear "mixed" model은 linear model과 어떤 차이점이 있을까요? 앞서 설명드렸다시피 linear mixed model은 단순 선형모형에서 랜덤효과가 추가됩니다. linear mixed model을 수식으로 나타내면 아래와 같습니다.  
+  
+$$
+y = x\beta + zu + \epsilon, u ~ N(0 \epsilon ~ N(0,I\sigma^2)
+$$
   
   
 ![manhattanplot](/img/Ovulenumber_Salkex_MH.png)
