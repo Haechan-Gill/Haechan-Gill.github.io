@@ -101,13 +101,28 @@ names(df)[2] <- c("SNP")
 names(df)[3] <- c("BP")
 names(df)[14] <- c("P") 
 ```
-이제 manhattan 함수를 사용해 manhattan plot을 그리고 결과물을 확인해봅시다.  
+이제 manhattan 함수를 사용해 manhattan plot을 그리고 결과물을 확인해봅시다. manhattan plot에서 x축은 각 SNP이 위치한 염색체와 염색체 상의 base position입니다. 그리고 y축은 각 SNP별로 계산된 p value에 -log10을 취한 값이기 때문에 높이 솟아오른 부분이 형질과 association이 강한 SNP이 됩니다.  
 ```r
 manhattan(df, main = "Title", ylim = c(0, 10), cex = 0.6, cex.axis = 0.9, col = c("grey", "skyblue"),
           genomewideline = F,suggestiveline=F)
 ```
   
 ![manhattanplot](/img/Mouse_toydata_manhattan_plot.png)
+  
+위의 manhattan plot에서 17번 염색체에서 굉장히 높은 peak가 관찰됩니다. 17번 염색체를 아래의 코드를 이용해 확대하여 관찰해 보겠습니다. 전체 df 대신 subset 함수를 이용해 CHR이 17인 데이터만 사용하였습니다.  
+```r
+manhattan(subset(df, CHR == 17), main = "CHR 17", ylim = c(0, 10), cex = 0.6, cex.axis = 0.9, col = c("grey", "skyblue"),
+          genomewideline = F,suggestiveline=F)
+```
+
+![manhattanplot_chr17](/img/Inkedmanhattan_chr17.jpg)
+
+확대해보니 두 개의 peak가 관찰됩니다. 여기서 3e+07에서 4e+07 사이를 다음의 코드를 이용해 확대하여 관찰해 보겠습니다. xlim을 설정하면 특정 구역을 지정해 plot을 그릴 수 있습니다.
+```r
+manhattan(subset(df, CHR == 17), main = "CHR 17", ylim = c(0, 10), cex = 0.9, cex.axis = 0.9, col = c("black", "skyblue"),
+          ,xlim=c(3e+07,4e+07),genomewideline = F,suggestiveline=F)
+```
+![manhattanplot_chr17_zoomin](/img/manhattan_chr17_zoomin.png)
 
 manhattan plot 외에 p value의 qq plot도 GWAS 결과물을 잘 정리할 수 있는 방법 중의 하나입니다. qq plot은 아래의 코드를 실행해 그릴 수 있습니다. 
 ```r
@@ -124,7 +139,11 @@ qqman library의 manhattan 함수와 GWASTools의 qqPlot 함수의 자세한 설
   
 ### 5. 결과 분석
  
-
+ toy data의 결과에서는 17번 염색체에서 굉장히 높은 peak가 관찰됩니다. 17번 염색체를 아래의 코드를 이용해 확대하여 관찰해 보겠습니다.  
+```r
+manhattan(subset(df, CHR == 17), main = "CHR 17", ylim = c(0, 10), cex = 0.6, cex.axis = 0.9, col = c("grey", "skyblue"),
+          genomewideline = F,suggestiveline=F)
+```
 
 Future study
 ------------------------------------
