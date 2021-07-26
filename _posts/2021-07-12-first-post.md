@@ -83,8 +83,31 @@ gemma -bfile mouse_hs1940 -k ./output/mouse_hs1940_0726.sXX.txt -lmm 4 -n 1 -o m
   
 ### 4. 결과 확인 및 plotting
 .assoc.txt 파일을 열어보면 아래와 같은 결과를 확인할 수 있습니다. 
-
+![assic file example](/img/GEMMA_result.PNG)
 각 SNP에 대한 기본적인 정보(위치한 염색체, 이름, 위치, missing number, nucelotide allele, allele frequency)와 추정된 effect size(beta), 각 test에서 계산된 p value 값을 확인할 수 있습니다.(p_wald, p_lrt, p_score) 이 중에서 likelihood ratio test(lrt)로 계산된 p value와 R을 이용해 manhattan plot을 그려보도록 하겠습니다. 
+manhattan plot을 그리기 위해 R에서 qqman, GWASTools, qvalue library가 필요합니다. 필요한 library를 다운받으셨다면 다음의 코드를 실행해 보겠습니다.  
+```r
+setwd('C:\\R\\GEMMA_tutorial')
+library(qqman)
+library(GWASTools)
+library(qvalue)
+
+df <- read.table("mouse_hs1940_0726.assoc.txt",sep='\t',stringsAsFactors = F, header=T)
+df
+```
+df에 GEMMA로 얻은 assoc.txt 파일이 저장되어 있음을 확인할 수 있습니다. GWASTools에서 manhattan 함수를 사용하면 손쉽게 manhattan plot을 그릴 수 있습니다. 이때 manhattan 함수는 SNP이 위치한 염색체 번호, SNP의 이름, SNP의 위치, p value가 다음과 같은 이름의 column으로 저장되어 있어야 합니다: 'CHR', 'SNP', 'BP', 'P' 따라서 assoc.txt 파일의 column 이름을 바꿔주어야 합니다.  
+```r
+names(df)[1] <- c("CHR")
+names(df)[2] <- c("SNP")
+names(df)[3] <- c("BP")
+names(df)[14] <- c("P") 
+```
+이제 manhattan 함수를 사용해 manhattan plot을 그리고 결과물을 확인해봅시다.  
+```r
+manhattan(df, main = "Title", ylim = c(0, 10), cex = 0.6, cex.axis = 0.9, col = c("grey", "skyblue"),
+          genomewideline = F,suggestiveline=F)
+```
+
 
 ### 5. 결과 분석
  
@@ -98,7 +121,6 @@ Future study
   
   
   
-![manhattanplot](/img/Ovulenumber_Salkex_MH.png)
   
   
   
