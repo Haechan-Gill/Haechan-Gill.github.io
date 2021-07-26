@@ -84,13 +84,12 @@ gemma -bfile mouse_hs1940 -k ./output/mouse_hs1940_0726.sXX.txt -lmm 4 -n 1 -o m
 ### 4. 결과 확인 및 plotting
 .assoc.txt 파일을 열어보면 아래와 같은 결과를 확인할 수 있습니다. 
 ![assic file example](/img/GEMMA_result.PNG)
-각 SNP에 대한 기본적인 정보(위치한 염색체, 이름, 위치, missing number, nucelotide allele, allele frequency)와 추정된 effect size(beta), 각 test에서 계산된 p value 값을 확인할 수 있습니다.(p_wald, p_lrt, p_score) 이 중에서 likelihood ratio test(lrt)로 계산된 p value와 R을 이용해 manhattan plot을 그려보도록 하겠습니다. 
-manhattan plot을 그리기 위해 R에서 qqman, GWASTools, qvalue library가 필요합니다. 필요한 library를 다운받으셨다면 다음의 코드를 실행해 보겠습니다.  
+각 SNP에 대한 기본적인 정보(위치한 염색체, 이름, 위치, missing number, nucelotide allele, allele frequency)와 추정된 effect size(beta), 각 test에서 계산된 p value 값을 확인할 수 있습니다.(p_wald, p_lrt, p_score) 이 중에서 likelihood ratio test(lrt)로 계산된 p value와 R을 이용해 manhattan plot과 qq plot을 그려보도록 하겠습니다. 
+manhattan plot을 그리기 위해 R에서 qqman library가 필요하고 qq plot을 그리기 위해 GWASTools library가 필요합니다. 필요한 library를 다운받으셨다면 다음의 코드를 실행해 보겠습니다.  
 ```r
 setwd('C:\\R\\GEMMA_tutorial')
 library(qqman)
 library(GWASTools)
-library(qvalue)
 
 df <- read.table("mouse_hs1940_0726.assoc.txt",sep='\t',stringsAsFactors = F, header=T)
 df
@@ -107,8 +106,22 @@ names(df)[14] <- c("P")
 manhattan(df, main = "Title", ylim = c(0, 10), cex = 0.6, cex.axis = 0.9, col = c("grey", "skyblue"),
           genomewideline = F,suggestiveline=F)
 ```
+  
+![manhattanplot](/img/Mouse_toydata_manhattan_plot.png)
 
+manhattan plot 외에 p value의 qq plot도 GWAS 결과물을 잘 정리할 수 있는 방법 중의 하나입니다. qq plot은 아래의 코드를 실행해 그릴 수 있습니다. 
+```r
+qqPlot(df$P, main = 'QQ plot')
+```
 
+![qqplot](/img/qqplot.png)
+  
+  
+qqman library의 manhattan 함수와 GWASTools의 qqPlot 함수의 자세한 설명은 아래의 메뉴얼을 참고하시기 바랍니다.
+[qqman manhattan](https://cran.r-project.org/web/packages/qqman/vignettes/qqman.html)
+[GWASTools qqplot](https://rdrr.io/bioc/GWASTools/man/qqPlot.html)
+  
+  
 ### 5. 결과 분석
  
 
@@ -124,8 +137,4 @@ Future study
   
   
   
-```python
-def print_hi(name):
-  print("hello", name)
-print_hi('Tom')
-```
+
