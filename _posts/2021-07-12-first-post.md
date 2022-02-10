@@ -140,7 +140,7 @@ qqman library의 manhattan 함수와 GWASTools의 qqPlot 함수의 자세한 설
   
   
 ### 5. 결과 분석
-일반적으로 GWAS 굉장히 많은 수의 SNP을 테스트하기 때문에 false positive에 취약합니다. 따라서 Bonferroni correction이나 False discovery rate correction과 같은 multiple hypothesis correcion을 해주어야 합니다. 그리고 correction 거친 후에도 유의미하다고 해서 그 SNP이 항상 형질과 생물학적인 연관성이 있다고 단정지어선 안됩니다. GWAS는 association이 있으리라 예상되는 QTL 후보를 선별하는 과정으로 이해해야 하며 실제로 형질에 영향을 줄 것인지에 대한 validation이 필수적입니다.  
+일반적으로 GWAS 굉장히 많은 수의 SNP을 테스트하기 때문에 false positive에 취약합니다. 따라서 Bonferroni correction이나 False discovery rate correction과 같은 multiple hypothesis correction을 해주어야 합니다. 그리고 correction을 거친 후에도 유의미하다고 해서 그 SNP이 항상 형질과 생물학적인 연관성이 있다고 단정지어선 안됩니다. GWAS는 association이 있으리라 예상되는 QTL 후보를 선별하는 과정으로 이해해야 하며 실제로 형질에 영향을 줄 것인지에 대한 validation이 필수적입니다.  
 validation은 기본적으로 association이 있는 SNP 근처에 분포하고 있는 유전자를 리스트업하는 것에서 시작합니다. 만약 리스트업한 유전자들의 기능이 이미 잘 밝혀져 있다면 그 기능들을 살펴서 테스트한 형질에 영향을 주는 메커니즘이나 인과관계를 설명하는 것이 일반적입니다. 만약 기능이 잘 밝혀져 있지 않은 유전자이거나 모델 생물을 이용해 GWAS를 했다면 후보 유전자를 knock out 혹은 knock down시켜 테스트한 형질이 영향을 받는지 추가 실험을 통해 validation을 해야 합니다.  
   
   
