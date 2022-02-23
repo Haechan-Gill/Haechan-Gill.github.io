@@ -11,7 +11,6 @@ categories: GWAS PLINK GEMMA
   
 Quantitative Trait Loci(QTL)
 -----------------------------
-
 우리가 생물에서 관찰할 수 있는 많은 형질들 중에서 ABO 혈액형과 같이 불연속적인 값을 가지는 표현형이 있는가 하면 키, 몸무게, 혈압 등과 같이 연속적인 값으로 측정될 수 있는 형질들도 있습니다.  
 이렇게 집단에서 연속적인 분포를 가지고 있는 형질들을 양적 형질, Quantitative trait(QT)라고 합니다.  
 무엇이 양적 형질을 결정하는가에 대해 R.A. Fisher는 유전적 요소와 환경적 요소가 양적 형질을 결정한다는 Multiple Factor Hypothesis를 주장합니다.  
