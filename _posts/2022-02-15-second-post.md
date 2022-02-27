@@ -1,5 +1,5 @@
 ---
-title: "SNP Genotype Matrix data and PLINK tutorial"
+title: "SNP Genotype Matrix data and PLINK tutorial(1)"
 date: 2022-02-15 16:10:00 -0400
 categories: SNP genotypematrix PLINK
 ---
