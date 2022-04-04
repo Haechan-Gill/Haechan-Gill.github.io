@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://Haechan-Gill.github.io/sitemap.xml
